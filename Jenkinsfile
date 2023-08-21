@@ -7,7 +7,7 @@ pipeline{
         stage("Clon code"){
             steps {
                 echo "Cloneing the code"
-                git url:"https://github.com/Quvonchdev/gradle-app.git", branch: "main"
+                git url:"https://github.com/Quvonchdev/java-gradle-app.git", branch: "main"
             }
         }
         // stage("soner quality chek"){
