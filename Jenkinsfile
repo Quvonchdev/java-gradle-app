@@ -34,7 +34,7 @@ pipeline{
                     withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_password')]) {
                         sh '''
                             docker build -t localhost:4000/springapp:${VERSION} .
-                            docker login -u quvonchdev -p $docker_password localhost:4000
+                            echo docker_password | docker login -u quvonchdev --password-stdin localhost:4000
                             docker push localhost:4000/springapp:${VERSION}
                             docker rmi localhost:4000/springapp:${VERSION}
                         '''
